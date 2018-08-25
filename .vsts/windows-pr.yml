@@ -4,15 +4,12 @@
 name: $(BuildDefinitionName)_$(Date:yyyyMMdd)$(Rev:.rr)
 
 queue:
-  name: Hosted VS2017
-  parallel: 2
+  name: Perf Pool - Windows
+  parallel: 1
   matrix:
     amd64:
       buildOpt: -p x64
       outDirSuffix: amd64
-    win32:
-      buildOpt:
-      outDirSuffix: win32
 
 trigger:
   branches:
